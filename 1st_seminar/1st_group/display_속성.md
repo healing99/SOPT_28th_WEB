@@ -88,7 +88,7 @@ div는 width가 컨테이너의 100%를 차지. 즉, 가로 한 줄을 다 차�
     - 다만 영역은 차지하게 됨
 3. `visibility : collapse`
     - table 요소에 사용하며, 행이나 열을 보이지 않게 함
-4. `visibility : none` <br><br>
+4. `visibility : inherit` <br><br>
 
 ### 🧐 opacity 속성
 
