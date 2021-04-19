@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-color: #424242;
+  --bg-color: #fff;
+  --content-color: red;
+}
+
+[data-theme='dark'] {
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --content-color: #05c78d;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-text {
+  font-weight: bolder;
+}
+
+.content-text:hover,
+.content-text:focus {
+  color: var(--content-color);
+  cursor: pointer;
+}
+
+.dark-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.dark-toggle {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 64px;
+}
+
+.dark-toggle input {
+  display: none;
+}
+
+.ball {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.ball:before {
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.6s;
+  width: 26px;
+}
+
+input:checked + .ball {
+  background-color: #05c78d;
+}
+
+input:checked + .ball:before {
+  transform: translateX(30px);
+}
