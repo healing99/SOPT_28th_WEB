@@ -1,5 +1,8 @@
-const toggleBtn = document.querySelector('.dark-toggle input[type="checkbox"]');
-const currentTheme = localStorage.getItem('theme');
+const toggleBtn = document.querySelector('.dark-toggle input[type="checkbox"]'),
+  currentTheme = localStorage.getItem('theme'),
+  modalBtn = document.querySelector('.modal-btn'),
+  modalBg = document.querySelector('.modal-bg'),
+  modalClose = document.querySelector('.modal-close');
 
 if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
@@ -19,4 +22,18 @@ const switchMode = (e) => {
   }
 };
 
-toggleBtn.addEventListener('change', switchMode, false);
+const popModal = () => {
+  modalBg.classList.add('modal-active');
+};
+
+const closeModal = () => {
+  modalBg.classList.remove('modal-active');
+};
+
+function init() {
+  toggleBtn.addEventListener('change', switchMode, false);
+  modalBtn.addEventListener('click', popModal);
+  modalClose.addEventListener('click', closeModal);
+}
+
+init();
