@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import ResultCard from './components/ResultCard';
 import { getUserData } from './lib/api/githubAPI';
@@ -11,13 +11,10 @@ function App() {
     setUserData(data);
   };
 
-  useEffect(() => {
-    getUser('healing99');
-  }, []);
   return (
     <>
       <h1>Hello</h1>
-      <SearchBar />
+      <SearchBar getUser={getUser} />
       <ResultCard data={userData} />
     </>
   );
