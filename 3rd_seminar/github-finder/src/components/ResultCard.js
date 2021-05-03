@@ -6,11 +6,26 @@ const CardWrap = Styled.div`
         display:flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 5px;
         width: 390px;
         background-color: rgb(255, 232, 29);
         border-radius: 5px;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+        animation-name: comingDown;
+        animation-duration: 1s;
     }
+
+    @keyframes comingDown{
+      from {
+        transform: translateY(-10%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity:1;
+      }
+    }
+  
     .result_image{
         width: 200px;
         height: 200px;
@@ -64,28 +79,30 @@ const CardWrap = Styled.div`
 
 const ResultCard = ({ data }) => {
   return (
-    <CardWrap>
-      <div className="result_card">
-        <img className="result_image" src={data.avatar_url} alt="" />
-        <p className="result_name">{data.name}</p>
-        <p className="result_id">{data.login}</p>
-        <p className="result_bio">{data.bio}</p>
-        <a
-          className="result_link"
-          href={data.html_url}
-          alt=""
-          target="_blank"
-          rel="noreferrer"
-        >
-          Visit Github
-        </a>
-        <div className="result_list">
-          <div className="list_title">Following: {data.following}</div>
-          <div className="list_title">Followers: {data.followers}</div>
-          <div className="list_title">Repos: {data.public_repos}</div>
+    data && (
+      <CardWrap>
+        <div className="result_card">
+          <img className="result_image" src={data.avatar_url} alt="" />
+          <p className="result_name">{data.name}</p>
+          <p className="result_id">{data.login}</p>
+          <p className="result_bio">{data.bio}</p>
+          <a
+            className="result_link"
+            href={data.html_url}
+            alt=""
+            target="_blank"
+            rel="noreferrer"
+          >
+            Visit Github
+          </a>
+          <div className="result_list">
+            <div className="list_title">Following: {data.following}</div>
+            <div className="list_title">Followers: {data.followers}</div>
+            <div className="list_title">Repos: {data.public_repos}</div>
+          </div>
         </div>
-      </div>
-    </CardWrap>
+      </CardWrap>
+    )
   );
 };
 

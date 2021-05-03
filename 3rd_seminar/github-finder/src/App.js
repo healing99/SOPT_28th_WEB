@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SearchBar from './components/SearchBar';
-import ResultCard from './components/ResultCard';
+import Result from './components/Result';
 import { getUserData } from './lib/api/githubAPI';
 import Styled from 'styled-components';
 
@@ -19,18 +19,28 @@ const MainWrap = Styled.div`
 `;
 
 function App() {
-  const [userData, setUserData] = useState('');
+  const [userData, setUserData] = useState({
+    status: 'idle',
+    data: null,
+  });
 
   const getUser = async (name) => {
-    const data = await getUserData(name);
-    setUserData(data);
+    setUserData({ ...userData, status: 'pending' });
+    try {
+      const data = await getUserData(name);
+      if (data === null) throw Error; //data가 null이면 에러 발생시켜서 catch로 넘어감
+      setUserData({ status: 'resolved', data: data });
+    } catch (e) {
+      setUserData({ status: 'rejected', data: null });
+      console.log(e);
+    }
   };
 
   return (
     <MainWrap>
       <h1>Github Profile Finder</h1>
       <SearchBar getUser={getUser} />
-      <ResultCard data={userData} />
+      <Result userData={userData} />
     </MainWrap>
   );
 }
