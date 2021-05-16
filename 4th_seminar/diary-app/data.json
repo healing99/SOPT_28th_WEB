@@ -11,7 +11,7 @@
             "id": 1,
             "date": 20210501,
             "title": "다이어리 제목 어쩌고 저쩌고",
-            "image": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a1108dc0-bf35-418b-956d-338d154a5911/image1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210504%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210504T202437Z&X-Amz-Expires=86400&X-Amz-Signature=c2a3ba63b93e1b31f92b92c4682d77eda72723f48b2c53fde67b2e92046fc320&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22image1.jpg%22",
+            "image": "https://newsimg.hankookilbo.com/cms/articlerelease/2020/09/13/c22a51dd-d1f8-48d2-82ad-f18a671078be.jpg",
             "weather": "맑음",
             "tags": ["태그1", "태그2"]
           },
@@ -43,7 +43,7 @@
             "id": 5,
             "date": 20210505,
             "title": "다이어리 제목 어쩌고 저쩌고",
-            "image": "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f4557e25-fbc0-49f2-be74-579c416f780e/image4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210504%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210504T202600Z&X-Amz-Expires=86400&X-Amz-Signature=0c39d5fed3a4899448873672ae7eb7a11859c3311708c895ee36065d22240cee&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22image4.jpg%22",
+            "image": "https://newsimg.hankookilbo.com/cms/articlerelease/2020/09/13/c22a51dd-d1f8-48d2-82ad-f18a671078be.jpg",
             "weather": "비",
             "tags": ["태그9", "태그10"]
           },

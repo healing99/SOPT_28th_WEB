@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../components/main/Card";
 import styled from "styled-components";
+import { getCardData } from "../lib/api";
 
 const MainWrap = styled.div`
   display: grid;
@@ -8,19 +9,24 @@ const MainWrap = styled.div`
   row-gap: 25px;
 `;
 
-const Main = () => {
-  //서버에서 API요청 결과값 받아오기 전에 먼저 dummy data로 구현
-  const [userData, setUserData] = useState({
-    id: 1,
-    date: 20210501,
-    title: "다이어리 제목입니다",
-    image: "",
-    weather: "맑음",
-    tags: ["태그1", "태그2"],
-  });
+const Main = ({ year, month }) => {
+  const [userData, setUserData] = useState(null);
+  const [rawData, setRawData] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const data = await getCardData();
+      setRawData(data);
+      data[year] && setUserData(data[year][month]);
+    })();
+  }, [year, month]);
+
   return (
     <MainWrap>
-      <Card props={userData} />
+      {userData &&
+        userData.map((data, idx) => {
+          return <Card key={idx} props={data} />;
+        })}
     </MainWrap>
   );
 };

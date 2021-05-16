@@ -18,6 +18,8 @@ function App() {
   const [year, setYear] = useState(getCurrDate().year);
   const [month, setMonth] = useState(getCurrDate().month);
 
+  //Main 컴포넌트에서는 해당 월의 데이터만 가지고 있어야하므로 Main에 현재 연도와 월을 넘겨줌
+  //ex) 2021년 5월에 해당하는 데이터만 가지고 오기 위함! 연도나 월이 변경된면 자동으로 API를 다시 요청
   return (
     <>
       <BrowserRouter>
@@ -30,7 +32,11 @@ function App() {
         />
         <Title />
         <Switch>
-          <Route exact path="/" component={Main} />
+          <Route
+            exact
+            path="/"
+            component={() => <Main year={year} month={month} />}
+          />
           <Route path="/diary" component={Diary} />
           <Route path="/diary/:id" component={Diary} />
         </Switch>
