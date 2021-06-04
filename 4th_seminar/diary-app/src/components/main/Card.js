@@ -79,9 +79,9 @@ const CardWrap = styled.div`
 
 //서버에 date가 20200516 형식으로 저장되어있기때문에, "5월 16일" 형태로 반환하는 함수
 const getDateFormat = (date) => {
-  const year = parseInt((date % 10000) / 100);
+  const month = parseInt((date % 10000) / 100);
   const day = date % 100;
-  return `${year}월 ${day}일`;
+  return `${month}월 ${day}일`;
 };
 
 const Card = ({ props }) => {
