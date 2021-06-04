@@ -33,10 +33,11 @@ const getDate = () => {
   return parseInt(year + monthF + dayF); //문자열을 다시 정수로
 };
 
-const NewCard = ({ year, month, rawData, setUserData }) => {
+const NewCard = ({ id, year, month, rawData, setUserData }) => {
   const createCard = async () => {
     const cardForm = {
       date: getDate(),
+      id: id,
       title: "",
       image: "",
       weather: "",
