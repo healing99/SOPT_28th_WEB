@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
+import CardHeader from "./CardHeader";
 
 const CardWrap = styled.div`
   width: 785px;
@@ -35,7 +36,7 @@ const Card = ({ data, match }) => {
   const { title, date, image, weather, tags, summary, text } = data;
   return (
     <CardWrap>
-      <p>{title}</p>
+      <CardHeader title={title} isReadOnly={isReadOnly} />
       <p>{date}</p>
       <img src={image} width="200" alt="" />
       <p>{weather}</p>
