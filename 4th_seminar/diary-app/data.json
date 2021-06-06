@@ -13,7 +13,10 @@
             "title": "다이어리 제목 어쩌고 저쩌고",
             "image": "https://newsimg.hankookilbo.com/cms/articlerelease/2020/09/13/c22a51dd-d1f8-48d2-82ad-f18a671078be.jpg",
             "weather": "맑음",
-            "tags": ["태그1", "태그2"]
+            "tags": [
+              "태그1",
+              "태그2"
+            ]
           },
           {
             "id": 2,
@@ -21,7 +24,9 @@
             "title": "다이어리 제목변경",
             "image": "https://blog.hmgjournal.com/images_n/contents/170421_dog01.png",
             "weather": "구름",
-            "tags": ["태그3"],
+            "tags": [
+              "태그3"
+            ],
             "summary": "강아지 너무 귀엽다"
           },
           {
@@ -30,7 +35,10 @@
             "title": "다이어리 제목 어쩌고 저쩌고",
             "image": "https://t1.daumcdn.net/liveboard/holapet/0e5f90af436e4c218343073164a5f657.JPG",
             "weather": "맑음",
-            "tags": ["안녕~~", "ㅎㅅㅎ"]
+            "tags": [
+              "안녕~~",
+              "ㅎㅅㅎ"
+            ]
           },
           {
             "id": 4,
@@ -38,23 +46,10 @@
             "title": "다이어리 제목 어쩌고 저쩌고",
             "image": "",
             "weather": "비",
-            "tags": ["긴태그는어떻게나올까", "히히히힣ㅎ"]
-          },
-          {
-            "id": 5,
-            "date": 20210505,
-            "title": "다이어리 제목 어쩌고 저쩌고",
-            "image": "https://newsimg.hankookilbo.com/cms/articlerelease/2020/09/13/c22a51dd-d1f8-48d2-82ad-f18a671078be.jpg",
-            "weather": "비",
-            "tags": ["태그9", "태그10"]
-          },
-          {
-            "id": 6,
-            "date": 20210506,
-            "title": "다이어리 제목 어쩌고 저쩌고",
-            "image": "",
-            "weather": "맑음",
-            "tags": ["태그11", "태그12"]
+            "tags": [
+              "긴태그는어떻게나올까",
+              "히히히힣ㅎ"
+            ]
           }
         ],
         [],
