@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 import CardHeader from "./CardHeader";
+import CardInfo from "./CardInfo";
 
 const CardWrap = styled.div`
   width: 785px;
@@ -33,16 +34,26 @@ const CardWrap = styled.div`
 
 const Card = ({ data, match }) => {
   const isReadOnly = match.path === "/diary/:id" ? true : false;
-  const { title, date, image, weather, tags, summary, text } = data;
+  const [state, setState] = useState(data);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
   return (
     <CardWrap>
-      <CardHeader title={title} isReadOnly={isReadOnly} />
-      <p>{date}</p>
-      <img src={image} width="200" alt="" />
-      <p>{weather}</p>
-      <p>{tags}</p>
-      <p>{summary}</p>
-      <p>{text}</p>
+      <CardHeader
+        title={state.title}
+        isReadOnly={isReadOnly}
+        handleChange={handleChange}
+      />
+      <CardInfo
+        data={state}
+        isReadOnly={isReadOnly}
+        handleChange={handleChange}
+      />
     </CardWrap>
   );
 };
