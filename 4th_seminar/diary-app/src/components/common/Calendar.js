@@ -51,9 +51,9 @@ const CalendarWrap = styled.div`
   }
 `;
 
-const Calendar = (props) => {
+const Calendar = (props, location) => {
   const { currYear, setCurrYear, currMonth, setCurrMonth } = props;
-
+  const isMain = location.pathname === "/" ? true : false;
   const monthList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   //useRef를 사용하여 DOM 요소를 가져올 수 있는 변수를 선언
@@ -68,7 +68,7 @@ const Calendar = (props) => {
             className="calendar__year--left"
             src={LeftOff}
             alt=""
-            onClick={() => setCurrYear(currYear - 1)} //왼쪽 버튼을 누르면 현재 연도에서 -1을 한 값을 다시 저장
+            onClick={() => isMain && setCurrYear(currYear - 1)} //왼쪽 버튼을 누르면 현재 연도에서 -1을 한 값을 다시 저장
             onMouseEnter={() => (leftButton.current.src = LeftOn)} //마우스가 영역 안으로 들어올 경우, 아이콘을 변경
             onMouseLeave={() => (leftButton.current.src = LeftOff)}
             ref={leftButton}
@@ -78,7 +78,7 @@ const Calendar = (props) => {
             className="calendar__year--right"
             src={RightOff}
             alt=""
-            onClick={() => setCurrYear(currYear + 1)}
+            onClick={() => isMain && setCurrYear(currYear + 1)}
             onMouseEnter={() => (rightButton.current.src = RightOn)}
             onMouseLeave={() => (rightButton.current.src = RightOff)}
             ref={rightButton}
@@ -90,7 +90,7 @@ const Calendar = (props) => {
               <div
                 key={month}
                 className="calendar__month--button"
-                onClick={() => setCurrMonth(month)}
+                onClick={() => isMain && setCurrMonth(month)}
                 style={
                   month === currMonth
                     ? { fontSize: "22px", fontWeight: "bold" }

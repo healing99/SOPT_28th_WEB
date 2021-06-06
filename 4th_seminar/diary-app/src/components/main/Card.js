@@ -14,6 +14,7 @@ const CardWrap = styled.div`
     height: 257px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
+    cursor: pointer;
 
     &__image {
       width: 220px;
