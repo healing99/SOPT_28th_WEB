@@ -47,6 +47,11 @@ function App() {
             path="/diary/:id"
             component={() => <Diary year={year} month={month} />}
           />
+          <Route
+            exact
+            path="/diary/edit/:id"
+            component={() => <Diary year={year} month={month} />}
+          />
         </Switch>
       </BrowserRouter>
       <Footer />

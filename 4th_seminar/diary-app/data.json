@@ -18,10 +18,11 @@
           {
             "id": 2,
             "date": 20210502,
-            "title": "다이어리 제목 어쩌고 저쩌고",
+            "title": "다이어리 제목변경",
             "image": "https://blog.hmgjournal.com/images_n/contents/170421_dog01.png",
-            "weather": "흐림",
-            "tags": ["태그3"]
+            "weather": "구름",
+            "tags": ["태그3"],
+            "summary": "강아지 너무 귀엽다"
           },
           {
             "id": 3,
